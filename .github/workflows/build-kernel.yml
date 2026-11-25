@@ -268,7 +268,7 @@ jobs:
 
       - name: Apply TCP BBRv3
         working-directory: kernel_workspace/common
-        run: patch --batch --forward --fuzz=0 -p1 < "${{ github.workspace }}/.github/patches/${{ steps.cfg.outputs.kmi_version }}/bbrv3.patch"
+        run: patch --batch --forward -p1 < "${{ github.workspace }}/.github/patches/${{ steps.cfg.outputs.kmi_version }}/bbrv3.patch"
 
       - name: Setup KernelSU
         if: inputs.variant != 'None'
